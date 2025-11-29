@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica de graficos</title>
+</head>
+
+<body>
+    <h1>imagen basica</h1>
+    <img src="car-7291166_1280.jpg" alt="Carro">
+
+    <h1> Imagen responsive</h1>
+    <img src="car-7291166_1280.jpg" alt="Carro" style="width:100%;">
+
+
+    <h1>Picture varias imagenes</h1>
+    <picture>
+
+        <source media="(min-width: 650px)" srcset="car-7291166_1280.jpg">
+        <source media="(min-width: 465px)" srcset="oldtimer-1197800_640.jpg">
+        <img src="racing-car-411738_1280.jpg">
+
+    </picture>
+
+    <h1>svg en lugar de mapa</h1>
+
+    <svg viewBOx="0 0 800 500" style="width: 100%; height: auto; background: aquamarine;">
+        <image href="mapa_inglaterra.jpg" x="50" y="50" wigth="700" height="400" preserveAspectRatio="xMidYMid slice"/> 
+        <rect x="50" y="50" width="700" height="400" fill="none" stroke="#665" stroke-width="3" />
+        <line x1="400" y1="50" x2="400" y2="450" stroke="#665" stroke-width="2" stroke-dasharray="5,5" />
+        <!-- Area 1: Recepcion-->
+        <rect x="100" y="100" width="250" height="150" fill="transparent" stroke="red"
+            onclick="mostrarInfo('recepcion')" style="cursor: pointer;" />
+        <!-- Area 2: Desarrollo-->
+        <rect x="450" y="100" width="250" height="150" fill="transparent" stroke="red"
+            onclick="mostrarInfo('desarrollo')" style="cursor: pointer;" />
+        <!-- Area 2: Servidores-->
+        <rect x="100" y="270" width="250" height="150" fill="transparent" stroke="red"
+            onclick="mostrarInfo('servidores')" style="cursor: pointer;" />
+        <!-- Area 2: Reuniones-->
+         <rect x="450" y="270" width="250" height="150" fill="transparent" stroke="red"
+            onclick="mostrarInfo('reuniones')" style="cursor: pointer;" />
+    </svg>
+    <div id="infoPanel" class="info-box">
+        <h3>Información del Área</h3>
+        <p id="areaInfo">Haz click en cualquier área del plano para ver su información técnica.</p>
+        <div id="areaDetails"></div>
+    </div>
+
+
+    <script>
+        // Datos de las áreas del sistema
+        const areasData = {
+            recepcion: {
+                nombre: "Recepción y Atención al Usuario",
+                responsable: "Ana Martínez",
+                equipos: "3 PCs, 1 Impresora, 1 Teléfono IP",
+                sistema: "Sistema de Tickets v2.1",
+                estado: "Operativo"
+            },
+            desarrollo: {
+                nombre: "Desarrollo y atencion al usuario",
+                responsable: "Maria Elena",
+                equipos: "2 PCs, 1 Impresora, 1 Teléfono IP",
+                sistema: "Sistema de Tickets v2.1",
+                estado: "Operativo"
+            },
+            servidores: {
+                nombre: "Servidores",
+                responsable: "Ismael Ocampo",
+                equipos: "1 PCs, 0 Impresora, 1 Teléfono IP",
+                sistema: "Sistema de Tickets v2.1",
+                estado: "Operativo"
+            },
+            reuniones: {
+                nombre: "Reuniones",
+                responsable: "Mario Esquivel",
+                equipos: "10 PCs, 2 Impresora, 1 Teléfono IP",
+                sistema: "Sistema de Tickets v2.1",
+                estado: "Operativo"
+            }
+        };
+
+
+        function mostrarInfo(areaKey) {
+            const area = areasData[areaKey];
+            const infoPanel = document.getElementById('areaInfo');
+            const detailsPanel = document.getElementById('areaDetails');
+
+            if (area) {
+                infoPanel.innerHTML = `<strong>${area.nombre}</strong>`;
+                detailsPanel.innerHTML = `
+<table style="width: 100%; margin-top: 10px; border-collapse: collapse;">
+<tr>
+<td style="padding: 8px; border-bottom: 1px solid #ccc;"><strong>Responsable:</strong></td>
+<td style="padding: 8px; border-bottom: 1px solid #ccc;">${area.responsable}</td>
+</tr>
+<tr>
+<td style="padding: 8px; border-bottom: 1px solid #ccc;"><strong>Equipos:</strong></td>
+<td style="padding: 8px; border-bottom: 1px solid #ccc;">${area.equipos}</td>
+</tr>
+<tr>
+<td style="padding: 8px; border-bottom: 1px solid #ccc;"><strong>Sistema:</strong></td>
+<td style="padding: 8px; border-bottom: 1px solid #ccc;">${area.sistema}</td>
+</tr>
+<tr>
+<td style="padding: 8px;"><strong>Estado:</strong></td>
+<td style="padding: 8px;">${area.estado}</td>
+</tr>
+</table>
+<p style="margin-top: 10px; font-size: 12px; color: #666;">
+Última actualización: ${new Date().toLocaleString()}
+</p>
+`;
+
+                // Efecto visual de confirmación
+                const infoPanelElement = document.getElementById('infoPanel');
+                infoPanelElement.style.borderLeftColor = '#4caf50';
+                setTimeout(() => {
+                    infoPanelElement.style.borderLeftColor = '#2196f3';
+                }, 1000);
+
+                // Log para debugging
+                console.log(`Área seleccionada: ${area.nombre}`);
+            }
+        }
+
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>

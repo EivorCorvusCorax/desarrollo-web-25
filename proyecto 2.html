@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ricardo Corazón de León</title>
+  <style>
+  * {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10px;
+    font-family: "Georgia", serif;
+    background-color: #fdfcfb;
+  }
+
+  body {
+    color: #2c2c2c;
+    line-height: 1.6;
+  }
+
+  header { 
+    background-color: #1e3a5f;
+    color: #f5d76e;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+  }
+
+  h1, h2, h3 {
+    text-align: center;
+  }
+
+  h2 {
+    color: #1e3a5f;
+    border-bottom: 2px solid #f5d76e;
+    padding-bottom: 5px;
+  }
+
+  h3 {
+    color: #264653;
+  }
+
+  aside {
+    width: 30%;
+    padding-left: 15px;
+    margin-left: 15px;
+    float: right;
+    font-style: italic;
+    background-color: #e9ecef;
+    border-left: 4px solid #1e3a5f;
+    color: #333;
+    border-radius: 8px;
+  }
+
+  svg {
+    width: 100%;
+    height: auto;
+    border: 2px solid #1e3a5f;
+    border-radius: 10px;
+    background: #eef3f8;
+  }
+
+  svg a:hover path {
+    fill: #f5d76e;
+    cursor: pointer;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
+
+  table, th, td {
+    border: 1px solid #1e3a5f;
+  }
+
+  th, td {
+    padding: 10px;
+    text-align: center;
+  }
+
+  th {
+    background-color: #1e3a5f;
+    color: #f5d76e;
+  }
+
+  td {
+    background-color: #fafafa;
+  }
+
+  tr:hover td {
+    background-color: #f0f8ff;
+  }
+
+  footer {
+    text-align: right;
+    color: #555;
+    font-weight: bold;
+    border-top: 2px solid #ccc;
+    padding-top: 10px;
+  }
+
+  .mapa-contenedor {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .enlace-interno {
+    color: #1e3a5f;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .enlace-interno:hover {
+    color: #f5d76e;
+  }
+
+  .imagen-reino picture img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+  }
+
+  </style>
+</head>
+<body style="margin: 40px;">
+
+<header>
+  <h1>Ricardo Corazón de León</h1>
+</header>
+
+<p>Ricardo I de Inglaterra, conocido como <em>Ricardo Corazón de León</em>, fue uno de los monarcas más célebres de la Edad Media. Su vida estuvo marcada por la guerra, las cruzadas y una imagen de valentía que lo convirtió en leyenda.</p>
+
+
+<section class="mapa-contenedor" id="mapa">
+  <h2>Mapa Interactivo: Territorios de Ricardo Corazón de León</h2>
+  <svg viewBox="0 0 600 400">
+
+    
+    <a href="#imagen-inglaterra">
+      <title>Reino de Inglaterra (Haz clic para ver imagen)</title>
+      <path d="M150,100 L200,80 L250,120 L230,180 L170,170 Z" fill="#a7c7e7" stroke="#1e3a5f" stroke-width="2"/>
+    </a>
+
+   
+    <a href="#tabla-resumen">
+      <title>Ducado de Aquitania (Haz clic para ver resumen)</title>
+      <path d="M300,220 L380,200 L400,280 L320,300 Z" fill="#d3e5a7" stroke="#1e3a5f" stroke-width="2"/>
+    </a>
+
+    
+    <a href="https://www.bbc.com/mundo" target="_blank">
+      <title>BBC Mundo (fuente externa)</title>
+      <circle cx="500" cy="90" r="25" fill="#f5d76e" stroke="#1e3a5f" stroke-width="2"/>
+    </a>
+
+    
+    <a href="https://historia.nationalgeographic.com.es" target="_blank">
+      <title>National Geographic (fuente externa)</title>
+      <rect x="450" y="250" width="80" height="50" fill="#f8d7da" stroke="#1e3a5f" stroke-width="2"/>
+    </a>
+
+  </svg>
+
+  <p>Haz clic en las zonas del mapa para descubrir más información sobre los territorios de Ricardo o visitar fuentes históricas externas.</p>
+</section>
+
+
+<section id="imagen-inglaterra" class="imagen-reino">
+  <h2>Reino de Inglaterra</h2>
+<picture>
+  <source srcset="mapa_inglaterra.jpg" type="image/jpeg">
+  <img src="mapa_inglaterra.jpg" alt="Mapa de Inglaterra" style="width:100%; border-radius:10px; box-shadow:0px 2px 10px rgba(0,0,0,0.3);">
+</picture>
+  <p>El Reino de Inglaterra fue el núcleo principal del poder de Ricardo Corazón de León, aunque pasó gran parte de su vida en Francia y en las Cruzadas.</p>
+  <p><a class="enlace-interno" href="#mapa">⬆ Volver al mapa</a></p>
+</section>
+
+
+<section id="tabla-resumen">
+  <h2>Resumen de los Territorios</h2>
+  <table>
+    <tr>
+      <th colspan="3">Territorios de Ricardo Corazón de León</th>
+    </tr>
+    <tr>
+      <th>Región</th>
+      <th>Ubicación</th>
+      <th>Importancia Histórica</th>
+    </tr>
+    <tr>
+      <td rowspan="2">Inglaterra</td>
+      <td>Londres y Oxford</td>
+      <td>Centro político y monárquico</td>
+    </tr>
+    <tr>
+      <td>Nottingham</td>
+      <td>Escenario de las leyendas de Robin Hood</td>
+    </tr>
+    <tr>
+      <td>Aquitania</td>
+      <td>Suroeste de Francia</td>
+      <td>Base de poder familiar heredada de Leonor de Aquitania</td>
+    </tr>
+  </table>
+  <p><a class="enlace-interno" href="#mapa">⬆ Volver al mapa</a></p>
+</section>
+
+
+<aside>
+  <h2>Ascenso al trono</h2>
+  <p>En 1189, Ricardo ascendió al trono de Inglaterra. Prefirió dedicar su energía a la Tercera Cruzada antes que al gobierno interno.</p>
+</aside>
+
+<p>Ricardo es recordado por su valentía y liderazgo en batalla, aunque también por sus ausencias del reino y su costoso rescate.</p>
+
+<footer>Erick Galvan Hernandez</footer>
+
+</body>
+</html>
